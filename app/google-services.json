@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "187318963042",
+    "firebase_url": "https://manabu-e8fad.firebaseio.com",
+    "project_id": "manabu-e8fad",
+    "storage_bucket": "manabu-e8fad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187318963042:android:00c618cb67221560f2fa3b",
+        "android_client_info": {
+          "package_name": "com.bharani.manabu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187318963042-70lfephfoi4o41hja8fmvkg9lsr560a3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bharani.manabu",
+            "certificate_hash": "0796bd0412f2dd66a4da0f2d8c77e369e7e1c4e6"
+          }
+        },
+        {
+          "client_id": "187318963042-nsp3l11fuogqppgi2qpa0kkpactu47sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAntaEe3j-x5n-eAjccgc6xh5ZlgYkpw3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187318963042-nsp3l11fuogqppgi2qpa0kkpactu47sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
