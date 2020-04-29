@@ -63,8 +63,4 @@ public class BottomNavHelper extends androidx.coordinatorlayout.widget.Coordinat
             }
         });
     }
-
-    private void showAlertBox() {
-
-    }
 }
