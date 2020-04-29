@@ -60,7 +60,7 @@
                 android:id="@+id/ccp"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:background="@color/colorAccent"
+                android:background="@color/colorWhite"
                 app:ccp_defaultNameCode="Ind" />
 
             <EditText
