@@ -27,6 +27,7 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -96,6 +97,7 @@ public class FindPeopleActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<ContactsModel, FriendsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<ContactsModel, FriendsViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull final FriendsViewHolder friendsViewHolder, final int position, @NonNull final ContactsModel contactsModel) {
+
                 friendsViewHolder.username.setText(contactsModel.getName());
                 friendsViewHolder.status.setText(contactsModel.getStatus());
                 Picasso.get().load(contactsModel.getProfile_img()).into(friendsViewHolder.profile_image);
