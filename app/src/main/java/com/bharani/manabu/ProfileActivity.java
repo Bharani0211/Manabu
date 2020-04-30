@@ -201,7 +201,7 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            friendRequestRef.child(senderUserid).child(UserId).child("request_type").setValue("received")
+                            friendRequestRef.child(UserId).child(senderUserid).child("request_type").setValue("received")
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
