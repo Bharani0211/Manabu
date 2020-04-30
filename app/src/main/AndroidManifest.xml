@@ -3,8 +3,10 @@
     package="com.bharani.manabu">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,17 +15,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NotificationActivity"
-            android:launchMode="singleTop">
+        <activity android:name=".FindPeopleActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
         </activity>
-        <activity android:name=".SettingsActivity"
-            android:launchMode="singleTop"/>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity
+            android:name=".NotificationActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:launchMode="singleTask" />
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:label="@string/title_activity_main" />
-        <activity android:name=".RegisterActivity"
-            android:launchMode="singleTop"/>
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".RegisterActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +44,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -2,23 +2,35 @@ package com.bharani.manabu;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.View;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private RecyclerView recyclerView;
+    private FloatingActionButton findPeople;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        recyclerView=findViewById(R.id.contact_list);
+        findPeople=findViewById(R.id.find_people);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         if(!isConnected())
         {
@@ -34,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         NavBarSetup();
+
+        findPeople.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent findPeople = new Intent(MainActivity.this,FindPeopleActivity.class);
+                startActivity(findPeople);
+            }
+        });
     }
 
     private void NavBarSetup() {

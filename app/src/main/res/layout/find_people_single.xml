@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/single_people_cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="30dp"
+    tools:targetApi="lollipop"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginStart="15dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/find_people_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_person"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/findpeople_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/username"
+        android:textColor="#000"
+        android:textSize="22sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/accept"
+        android:id="@+id/request_accept_btn"
+        android:layout_marginTop="62dp"
+        android:layout_marginStart="130dp"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/cancel"
+        android:backgroundTint="#F81F27"
+        android:id="@+id/request_cancel_btn"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="62dp"
+        android:layout_marginStart="220dp"/>
+
+</androidx.cardview.widget.CardView>

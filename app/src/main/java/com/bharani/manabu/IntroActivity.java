@@ -65,7 +65,7 @@ public class IntroActivity extends AppCompatActivity {
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Make a call","Make a video call to your friend and explore the language",R.drawable.video_call));
         mList.add(new ScreenItem("Deliver it","Read out the question displayed on the screen",R.drawable.talk_to_friend));
-        mList.add(new ScreenItem("Rated it","Your friend while rate your quality baed on how did you made the pronounciation of the sentence",R.drawable.rating));
+        mList.add(new ScreenItem("Rated it","Your friend while rate your quality based on how did you made the pronounciation of the sentence",R.drawable.rating));
 
         // setup viewpager
         screenPager =findViewById(R.id.screen_viewpager);
