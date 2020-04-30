@@ -4,12 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/single_contact_cardView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="90dp"
     android:elevation="30dp"
-    tools:targetApi="lollipop"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="15dp"
-    android:layout_marginStart="15dp">
+    tools:targetApi="lollipop">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/contact_profile"
@@ -18,25 +15,37 @@
         android:layout_marginBottom="15dp"
         android:src="@drawable/ic_person"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="10dp"
+        />
 
     <TextView
         android:id="@+id/contact_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
         android:text="@string/username"
         android:textColor="#000"
-        android:textSize="22sp" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/contact_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif"
+        android:text="Status"
+        android:textColor="#4A4A4A"
+        android:textSize="12sp" />
 
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/videoCall_btn"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="320dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="350dp"
         android:src="@drawable/ic_videocam"/>
 
 </androidx.cardview.widget.CardView>

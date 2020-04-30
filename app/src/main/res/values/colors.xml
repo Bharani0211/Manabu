@@ -5,6 +5,8 @@
     <color name="colorAccent">#5B1181</color>
     <color name="colorWhite">#ffffff</color>
 
+    <color name="colorRed">#CD1010</color>
+
     <color name="intro_text_colorMain">#000</color>
     <color name="intro_subText_colorMain">#393838</color>
 
