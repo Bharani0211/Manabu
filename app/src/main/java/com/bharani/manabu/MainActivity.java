@@ -102,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        validateUser();
+
         FirebaseRecyclerOptions<ContactsModel> options
                 = new FirebaseRecyclerOptions.Builder<ContactsModel>()
                 .setQuery(contactsRef.child(currentuserid), ContactsModel.class)
@@ -124,6 +127,16 @@ public class MainActivity extends AppCompatActivity {
                             contactsViewHolder.username.setText(username);
                             contactsViewHolder.status.setText(status);
                             Picasso.get().load(profile_Image).into(contactsViewHolder.profile);
+
+                            contactsViewHolder.callBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent callingIntent = new Intent(MainActivity.this, CallingActivity.class);
+                                    callingIntent.putExtra("clicked_user_id",listUserId);
+
+                                    startActivity(callingIntent);
+                                }
+                            });
                         }
                     }
 
@@ -144,6 +157,25 @@ public class MainActivity extends AppCompatActivity {
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
         firebaseRecyclerAdapter.startListening();
+    }
+
+    private void validateUser() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        reference.child("Users").child(currentuserid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.exists()){
+                    Intent settingsActivity = new Intent(MainActivity.this, SettingsActivity.class);
+                    startActivity(settingsActivity);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public static class ContactsViewHolder extends RecyclerView.ViewHolder {
