@@ -31,8 +31,8 @@
 
     <Button
         android:id="@+id/request_accept_btn"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="70dp"
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,22 +41,21 @@
         android:scaleType="center"
         app:layout_anchorGravity="bottom|end|right"
         android:drawableLeft="@drawable/ic_merge"
-        android:visibility="gone"
-        android:paddingLeft="18dp"
+
+        android:paddingLeft="14dp"
         android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/request_cancel_btn"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="70dp"
         android:backgroundTint="@color/colorRed"
-        android:layout_marginStart="340dp"
+        android:layout_marginStart="320dp"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/ic_cancel"
-        android:visibility="gone"
-        android:paddingLeft="18dp"
+        android:paddingLeft="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

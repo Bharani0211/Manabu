@@ -41,11 +41,11 @@
         android:textSize="12sp" />
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:id="@+id/videoCall_btn"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="350dp"
+        android:layout_marginStart="335dp"
         android:src="@drawable/ic_videocam"/>
 
 </androidx.cardview.widget.CardView>
