@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton findPeople;
     private DatabaseReference contactsRef, userRef;
     private FirebaseAuth mAuth;
-    private String currentuserid, username, profile_Image="", status="";
+    private String currentuserid, username, profile_Image="", status="", calledBy="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        checkForReceivingCall();
+
         validateUser();
 
         FirebaseRecyclerOptions<ContactsModel> options
@@ -133,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     Intent callingIntent = new Intent(MainActivity.this, CallingActivity.class);
                                     callingIntent.putExtra("clicked_user_id",listUserId);
-
                                     startActivity(callingIntent);
                                 }
                             });
@@ -157,6 +158,26 @@ public class MainActivity extends AppCompatActivity {
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
         firebaseRecyclerAdapter.startListening();
+    }
+
+    private void checkForReceivingCall() {
+        userRef.child(currentuserid).child("Ringing").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild("ringing")){
+                    calledBy = dataSnapshot.child("ringing").getValue().toString();
+
+                    Intent callingIntent =new Intent(MainActivity.this, CallingActivity.class);
+                    callingIntent.putExtra("clicked_user_id",calledBy);
+                    startActivity(callingIntent);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void validateUser() {

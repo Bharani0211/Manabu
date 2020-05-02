@@ -29,7 +29,6 @@ public class BottomNavHelper extends androidx.coordinatorlayout.widget.Coordinat
                     case R.id.bottom_nav_home:
                         context.startActivity(new Intent(context, MainActivity.class));
                         ((Activity) context).overridePendingTransition(0, 0);
-                        ((Activity) context).finish();
                         break;
                     case R.id.bottom_nav_notification:
                         context.startActivity(new Intent(context, NotificationActivity.class));
